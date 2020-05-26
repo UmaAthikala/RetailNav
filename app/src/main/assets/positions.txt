@@ -1,0 +1,4 @@
+1,entrance,0,0
+2,fruits,0,40
+3,Books,30,60
+4,cosmetics,30,90
