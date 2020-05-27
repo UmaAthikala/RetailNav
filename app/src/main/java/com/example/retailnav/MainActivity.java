@@ -9,6 +9,7 @@ import android.widget.CheckBox;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -32,17 +33,17 @@ public class MainActivity extends AppCompatActivity {
 
     public void displayshoppingList()
     {
-        /*Iterator<String> shopListItr = shoppinglist.iterator();
-        while (shopListItr.hasNext()) {
+        Iterator<String> shopListItr = shoppinglist.iterator();
+        /*while (shopListItr.hasNext()) {
             System.out.println("\n.......................... "+shopListItr.next()+" ...........................................");
         }*/
         Set<String> hashSet = new LinkedHashSet(shoppinglist);
         shoppinglist = new ArrayList<String>(hashSet);
 
-       /* shopListItr = shoppinglist.iterator();
+        shopListItr = shoppinglist.iterator();
         while (shopListItr.hasNext()) {
             System.out.println("\n.......................... "+shopListItr.next()+" ...........................................");
-        }*/
+        }
     }
     public void modifyShoppingList(View v)
     {
