@@ -8,44 +8,49 @@
     tools:context=".MainActivity">
 
     <CheckBox
-        android:id="@+id/fruit1"
+        android:id="@+id/Fruits1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:layout_marginTop="79dp"
+        android:onClick="modifyShoppingList"
         android:text="Mango"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
-        android:id="@+id/book1"
+        android:id="@+id/Books1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:layout_marginTop="20dp"
+        android:onClick="modifyShoppingList"
         android:text="Alchemist"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fruit1" />
+        app:layout_constraintTop_toBottomOf="@+id/Fruits1" />
 
     <CheckBox
-        android:id="@+id/fruit2"
+        android:id="@+id/Fruits2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:layout_marginTop="20dp"
+        android:onClick="modifyShoppingList"
         android:text="Apple"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/book1" />
+        app:layout_constraintTop_toBottomOf="@+id/Books1" />
 
     <CheckBox
-        android:id="@+id/Comestics"
+        android:id="@+id/Comestics1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:layout_marginTop="20dp"
+        android:checked="false"
+        android:onClick="modifyShoppingList"
         android:text="LipBalm"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fruit2" />
+        app:layout_constraintTop_toBottomOf="@+id/Fruits2" />
 
     <CheckBox
         android:id="@+id/Book2"
@@ -53,9 +58,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:layout_marginTop="20dp"
+        android:onClick="modifyShoppingList"
         android:text="BigMagic"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Comestics" />
+        app:layout_constraintTop_toBottomOf="@+id/Comestics1" />
 
     <TextView
         android:id="@+id/itemList"
@@ -70,11 +76,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
-        android:id="@+id/checkBox6"
+        android:id="@+id/Cosmetics2"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="20dp"
+        android:onClick="modifyShoppingList"
         android:text="Moisturizer"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Book2" />
