@@ -1,10 +1,14 @@
 package com.example.retailnav;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Paint;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,11 +34,33 @@ public class activity_map extends AppCompatActivity {
                     new InputStreamReader(getAssets().open("positions.txt")));
             // do reading, usually loop until end of file reading
             String mLine;
+
+
+            Bitmap bitmap = Bitmap.createBitmap(1000, 1000, Bitmap.Config.ARGB_8888);
+            Canvas canvas = new Canvas(bitmap);
+            canvas.drawColor(Color.BLACK);
+            Paint paint = new Paint();
+            paint.setColor(Color.RED);
+            paint.setStyle(Paint.Style.STROKE);
+            paint.setStrokeWidth(8);
+            paint.setAntiAlias(true);
+            int offset = 50;
+            canvas.drawLine(300,600,200,100, paint);
+
+            ImageView mImageView = (ImageView) findViewById(R.id.iv);
+            mImageView.setImageBitmap(bitmap);
+
+
+            int prev_x=-1,prev_y=-1;
             while ((mLine = reader.readLine()) != null) {
                 //System.out.println("\n*****\n*******\n*****\n****\n"+mLine);
                 String node_details[]=mLine.split(",");
                 create_nodes(node_details);
-            }
+
+
+
+                }
+
         } catch (IOException e) {
             //log the exception
         } finally {
@@ -46,7 +72,6 @@ public class activity_map extends AppCompatActivity {
                 }
             }
         }
-
     }
 
     protected void create_nodes(String node_details[])
@@ -63,7 +88,7 @@ public class activity_map extends AppCompatActivity {
                     RelativeLayout.LayoutParams.WRAP_CONTENT);
             params.addRule(RelativeLayout.ALIGN_PARENT_LEFT, RelativeLayout.TRUE);
             params.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM, RelativeLayout.TRUE);
-            params.setMargins(node_x * 20, 0, 0, node_y * 20);
+            params.setMargins(node_x * 10, 0, 0, node_y * 10);
             node.setLayoutParams(params);
             node.setGravity(1);
             node.setClickable(true);
@@ -73,7 +98,7 @@ public class activity_map extends AppCompatActivity {
             node.setText(node_details[1]);
             node.setHeight(80);
             node.setWidth(200);
-            
+
 
         GradientDrawable shape = new GradientDrawable();
         shape.setShape(GradientDrawable.RECTANGLE);
